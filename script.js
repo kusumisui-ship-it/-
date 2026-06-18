@@ -393,3 +393,6 @@ setInterval(gameTick, 1000);
 setInterval(saveGame, 15000);
 
 loadGame();
+
+setInterval(saveGame,15000);
+
