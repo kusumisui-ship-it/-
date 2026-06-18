@@ -1,24 +1,43 @@
 body{
-
-background:#222;
-
-color:white;
-
-text-align:center;
-
-font-family:sans-serif;
-
+  background:#222;
+  color:white;
+  text-align:center;
+  font-family:sans-serif;
+  margin:0;
+  padding:20px;
 }
 
+.status{
+  background:#333;
+  border-radius:12px;
+  padding:10px;
+  margin:15px auto;
+  max-width:320px;
+}
 
 button{
+  padding:12px 18px;
+  font-size:16px;
+  border-radius:10px;
+  border:none;
+  margin:6px;
+}
 
-padding:15px;
+.cat-card{
+  background:#333;
+  border-radius:14px;
+  padding:15px;
+  margin:12px auto;
+  max-width:320px;
+  box-shadow:0 4px 10px rgba(0,0,0,0.3);
+}
 
-font-size:20px;
+.cat-name{
+  font-size:22px;
+  font-weight:bold;
+}
 
-border-radius:10px;
-
-cursor:pointer;
-
+.cat-info{
+  font-size:16px;
+  line-height:1.8;
 }
