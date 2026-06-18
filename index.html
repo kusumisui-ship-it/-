@@ -1,16 +1,17 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>にゃんカフェ Ver0.1</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>にゃんカフェ Ver0.2</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
 <header>
   <h1>🐱 にゃんカフェ</h1>
   <p id="timeText">1日目 朝 6:00</p>
+  <p id="saveText">💾 オートセーブ ON</p>
 </header>
 
 <section class="top-status">
@@ -21,20 +22,39 @@
 </section>
 
 <main>
+
   <section id="homeTab" class="tab active">
     <h2>🏠 ホーム</h2>
-    <p id="incomeText">毎秒収入：100 C$</p>
+    <div class="panel">
+      <p id="incomeText">毎秒収入：100 C$</p>
+      <p id="buildingText">建物：リビング</p>
+      <p id="statsText">総保護数：0 / 総引取数：0</p>
+    </div>
     <div id="catArea"></div>
   </section>
 
   <section id="cafeTab" class="tab">
     <h2>☕ 猫カフェ</h2>
-    <p id="openText">営業時間：9:00〜18:00</p>
-    <p id="cafeStatusText">準備中</p>
-    <p id="todaySalesText">本日売上：0 C$</p>
-    <p id="totalSalesText">総売上：0 C$</p>
-    <button onclick="hireStaff()">従業員を雇う：5000 C$</button>
-    <p id="staffText">従業員：0人</p>
+    <div class="panel">
+      <p id="cafeStatusText">準備中</p>
+      <p id="todaySalesText">本日売上：0 C$</p>
+      <p id="totalSalesText">総売上：0 C$</p>
+      <p id="staffText">従業員：0人</p>
+      <button onclick="hireStaff()">従業員を雇う</button>
+    </div>
+
+    <h3>🏠 建物</h3>
+    <div id="buildingArea"></div>
+  </section>
+
+  <section id="shopTab" class="tab">
+    <h2>🛒 ショップ</h2>
+
+    <h3>🍚 食事アイテム</h3>
+    <div id="foodArea"></div>
+
+    <h3>🎾 おもちゃ</h3>
+    <div id="toyArea"></div>
   </section>
 
   <section id="memoryTab" class="tab">
@@ -44,16 +64,21 @@
 
   <section id="settingTab" class="tab">
     <h2>⚙ 設定</h2>
-    <button onclick="toggleOldAge()">老衰：<span id="oldAgeText">OFF</span></button>
-    <button onclick="toggleDisease()">病気：<span id="diseaseText">OFF</span></button>
-    <button onclick="saveGame()">セーブ</button>
-    <button onclick="resetGame()">リセット</button>
+    <div class="panel">
+      <p>💾 オートセーブ：ON</p>
+      <p id="lastSaveText">最終保存：--</p>
+      <button onclick="toggleOldAge()">老衰：<span id="oldAgeText">OFF</span></button>
+      <button onclick="toggleDisease()">病気：<span id="diseaseText">OFF</span></button>
+      <button onclick="resetGame()">リセット</button>
+    </div>
   </section>
+
 </main>
 
 <nav>
   <button onclick="changeTab('homeTab')">🏠<br>ホーム</button>
   <button onclick="changeTab('cafeTab')">☕<br>カフェ</button>
+  <button onclick="changeTab('shopTab')">🛒<br>ショップ</button>
   <button onclick="changeTab('memoryTab')">📖<br>思い出</button>
   <button onclick="changeTab('settingTab')">⚙<br>設定</button>
 </nav>
