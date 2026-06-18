@@ -1,1 +1,24 @@
+body{
 
+background:#222;
+
+color:white;
+
+text-align:center;
+
+font-family:sans-serif;
+
+}
+
+
+button{
+
+padding:15px;
+
+font-size:20px;
+
+border-radius:10px;
+
+cursor:pointer;
+
+}
