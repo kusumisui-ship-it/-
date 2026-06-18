@@ -586,6 +586,9 @@ function loadGame(){
   if(data){
     game = JSON.parse(data);
 
+if(!Array.isArray(game.cats) || game.cats.length === 0){
+  initCats();
+}
     if(game.totalProtected === undefined) game.totalProtected = game.cats.length;
     if(game.totalAdopted === undefined) game.totalAdopted = 0;
     if(game.buildingIndex === undefined) game.buildingIndex = 0;
