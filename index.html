@@ -2,24 +2,62 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <title>にゃんカフェ</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>にゃんカフェ Ver0.1</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <h1>🐱にゃんカフェ</h1>
+<header>
+  <h1>🐱 にゃんカフェ</h1>
+  <p id="timeText">1日目 朝 6:00</p>
+</header>
 
-  <div class="status">
-    <p id="money">資金：1000円</p>
-    <p id="catCount">猫：3匹</p>
-  </div>
+<section class="top-status">
+  <div>資金<br><span id="moneyText">0 C$</span></div>
+  <div>Lv<br><span id="levelText">1</span></div>
+  <div>猫<br><span id="catCountText">10/10</span></div>
+  <div>来客<br><span id="visitorText">0人</span></div>
+</section>
 
-  <button id="work">営業する</button>
+<main>
+  <section id="homeTab" class="tab active">
+    <h2>🏠 ホーム</h2>
+    <p id="incomeText">毎秒収入：100 C$</p>
+    <div id="catArea"></div>
+  </section>
 
-  <h2>預かり猫</h2>
+  <section id="cafeTab" class="tab">
+    <h2>☕ 猫カフェ</h2>
+    <p id="openText">営業時間：9:00〜18:00</p>
+    <p id="cafeStatusText">準備中</p>
+    <p id="todaySalesText">本日売上：0 C$</p>
+    <p id="totalSalesText">総売上：0 C$</p>
+    <button onclick="hireStaff()">従業員を雇う：5000 C$</button>
+    <p id="staffText">従業員：0人</p>
+  </section>
 
-  <div id="catArea"></div>
+  <section id="memoryTab" class="tab">
+    <h2>📖 思い出</h2>
+    <div id="memoryArea"></div>
+  </section>
 
-  <script src="script.js"></script>
+  <section id="settingTab" class="tab">
+    <h2>⚙ 設定</h2>
+    <button onclick="toggleOldAge()">老衰：<span id="oldAgeText">OFF</span></button>
+    <button onclick="toggleDisease()">病気：<span id="diseaseText">OFF</span></button>
+    <button onclick="saveGame()">セーブ</button>
+    <button onclick="resetGame()">リセット</button>
+  </section>
+</main>
+
+<nav>
+  <button onclick="changeTab('homeTab')">🏠<br>ホーム</button>
+  <button onclick="changeTab('cafeTab')">☕<br>カフェ</button>
+  <button onclick="changeTab('memoryTab')">📖<br>思い出</button>
+  <button onclick="changeTab('settingTab')">⚙<br>設定</button>
+</nav>
+
+<script src="script.js"></script>
 </body>
 </html>
